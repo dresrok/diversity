@@ -15,6 +15,6 @@
 library(jsonlite)
 
 hello <- function(n1, n2) {
-  resultado = n1+n2;
-  toJSON(resultado, pretty=TRUE)
+  resultado <- toJSON(n1+n2, pretty=TRUE)
+  return(resultado)
 }
