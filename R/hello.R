@@ -12,6 +12,8 @@
 #   Build and Reload Package:  'Ctrl + Shift + B'
 #   Check Package:             'Ctrl + Shift + E'
 #   Test Package:              'Ctrl + Shift + T'
+install.packages("jsonlite", repos="http://cran.r-project.org")
+
 library(jsonlite)
 
 hello <- function(n1, n2) {
