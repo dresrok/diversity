@@ -21,6 +21,7 @@ hello <- function(n1) {
 }
 
 getIv <- function(){
+  library(jsonlite)
   data <- fromJSON("data/parcela.json")
   forest <- data.frame(table(data$Especie), stringsAsFactors=FALSE, row.names = NULL);
   names(forest) <- c('Especie', 'abunA');
