@@ -17,5 +17,5 @@ hello <- function(n1) {
   #resultado <- n1*3
   library(jsonlite)
   resultado <- fromJSON("https://api.github.com/users/hadley/orgs")
-  print(resultado$login)
+  print(resultado$id)
 }
