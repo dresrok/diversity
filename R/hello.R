@@ -33,7 +33,6 @@ getIv <- function(url){
   forest$frecA <- dtFreq$Freq;
   forest$frecR <- (forest$frecA/sum(forest$frecA))*100;
   data$Dn <- as.double(gsub(",", ".", gsub("\\.", "", data$Dn)))
-  print(data$Dn)
   data$dA <- (pi/40000) * (data$Dn^2);
   dtDn <- data.frame(tapply(data$dA, data$Especie, sum), row.names=NULL);
   names(dtDn) <- c('sumDn');
