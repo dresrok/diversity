@@ -13,9 +13,8 @@
 #   Check Package:             'Ctrl + Shift + E'
 #   Test Package:              'Ctrl + Shift + T'
 
-library(jsonlite)
-
 hello <- function(n1) {
+  library(jsonlite)
   #resultado <- n1*3
   resultado <- fromJSON("https://api.github.com/users/hadley/orgs")
   print(resultado$login)
