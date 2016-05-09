@@ -20,9 +20,9 @@ hello <- function(n1) {
   print(resultado$id)
 }
 
-getIv <- function(){
+getIv <- function(url){
   library(jsonlite)
-  data <- fromJSON("data/parcela.json")
+  data <- fromJSON(url)
   forest <- data.frame(table(data$Especie), stringsAsFactors=FALSE, row.names = NULL);
   names(forest) <- c('Especie', 'abunA');
   forest$Especie <- as.character(forest$Especie);
