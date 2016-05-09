@@ -12,11 +12,10 @@
 #   Build and Reload Package:  'Ctrl + Shift + B'
 #   Check Package:             'Ctrl + Shift + E'
 #   Test Package:              'Ctrl + Shift + T'
-install.packages("jsonlite", repos="http://cran.r-project.org")
 
 library(jsonlite)
 
 hello <- function(n1, n2) {
   resultado <- toJSON(n1+n2, pretty=TRUE)
-  return(resultado)
+  print(resultado)
 }
