@@ -12,7 +12,8 @@
 #   Build and Reload Package:  'Ctrl + Shift + B'
 #   Check Package:             'Ctrl + Shift + E'
 #   Test Package:              'Ctrl + Shift + T'
+library(jsonlite)
 
-hello <- function(message) {
-  print(message)
+hello <- function(n1, n2) {
+  return(n1+n2)
 }
