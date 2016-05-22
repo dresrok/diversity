@@ -23,18 +23,19 @@ hello <- function(n1) {
 getIv <- function(url){
   library(jsonlite)
   data <- fromJSON(url)
-  forest <- data.frame(table(data$Especie), stringsAsFactors=FALSE, row.names = NULL);
+  View(data)
+  forest <- data.frame(table(data$especie), stringsAsFactors=FALSE, row.names = NULL);
   names(forest) <- c('Especie', 'abunA');
   forest$Especie <- as.character(forest$Especie);
   forest$abunR <- (forest$abunA/sum(forest$abunA))*100;
-  freqSpecies <- data.frame(table(data$Subparcela, data$Especie));
+  freqSpecies <- data.frame(table(data$subparcela, data$especie));
   names(freqSpecies) <- c('subparcela', 'especie', 'frecA');
   dtFreq <- data.frame(table(freqSpecies$especie[freqSpecies$frec > 0]));
   forest$frecA <- dtFreq$Freq;
   forest$frecR <- (forest$frecA/sum(forest$frecA))*100;
-  data$Dn <- as.double(gsub(",", ".", gsub("\\.", "", data$Dn)))
-  data$dA <- (pi/40000) * (data$Dn^2);
-  dtDn <- data.frame(tapply(data$dA, data$Especie, sum), row.names=NULL);
+  data$dn <- as.double(gsub(",", ".", gsub("\\.", "", data$dn)))
+  data$dA <- (pi/40000) * (data$dn^2);
+  dtDn <- data.frame(tapply(data$dA, data$especie, sum), row.names=NULL);
   names(dtDn) <- c('sumDn');
   forest$domA <-  dtDn$sumDn;
   forest$domR <- (forest$domA/sum(forest$domA))*100;
