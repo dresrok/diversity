@@ -23,7 +23,6 @@ hello <- function(n1) {
 getIv <- function(url){
   library(jsonlite)
   data <- fromJSON(url)
-  View(data)
   forest <- data.frame(table(data$especie), stringsAsFactors=FALSE, row.names = NULL);
   names(forest) <- c('Especie', 'abunA');
   forest$Especie <- as.character(forest$Especie);
